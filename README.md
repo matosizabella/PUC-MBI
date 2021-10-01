@@ -1,13 +1,27 @@
-# PUC-MBA
-Trabalho de conclusão do MBA PUC-Rio
+# Clusterização dos Municípios Brasileiros: uma Abordagem para Igualdade de Gênero
 
-## TEMA CENTRAL
+#### Aluno: [Izabella Matos](https://github.com/matosizabella)
+#### Orientadora: [Manoela Kohler](https://github.com/manoelakohler).
+
+---
+
+Trabalho apresentado ao curso [BI MASTER](https://ica.puc-rio.ai/bi-master) como pré-requisito para conclusão de curso e obtenção de crédito na disciplina "Projetos de Sistemas Inteligentes de Apoio à Decisão".
+
+<!-- para os links a seguir, caso os arquivos estejam no mesmo repositório que este README, não há necessidade de incluir o link completo: basta incluir o nome do arquivo, com extensão, que o GitHub completa o link corretamente -->
+- [Link para o código](https://github.com/matosizabella/PUC-MBI).
+
+---
+
+### Resumo
+
 Este trabalho tem por ideia central a utilização de metodologias já difundidas para calcular uma pontuação (score) com relação à igualdade de gênero para todos os municípios brasileiros. Baseada nos critérios apresentados pelo índice GGI - Global Gender Gap Index, a ideia central é partir desta nova variável – somada às demais variáveis escolhidas - encontrar agrupamentos e características que permitam distinguir perfis de cidades que possuem maior igualdade de gênero.
 
-## OBJETIVO:
+### 1. Introdução
+
+#### OBJETIVO:
 * Analisar quais perfis de municípios brasileiros são possíveis distinguir com relação à igualdade de gênero.
 
-## BASE DE DADOS:
+#### BASE DE DADOS:
 A base de dados foi construida pela autora, é resultado de uma composição de três fontes distintas: 
 
 **Dados para construção do score de gênero:** Censo 2010- IBGE, Tribunal Superior Eleitoral (TSE) – Eleições 2010 (governadores e senadores), Tribunal Superior Eleitoral (TSE) – Eleições 2008 (prefeitos e vereadores).
@@ -16,13 +30,12 @@ A base de dados foi construida pela autora, é resultado de uma composição de 
 
 **Dados gerais municipais:** obtidos através de raspagem de dados no site IBGE cidades (https://cidades.ibge.gov.br/brasil). 
 
-## METODOLOGIA
+### 2. Modelagem
 Após avaliação e tratamento dos dados faltantes na base de dados, a base foi padronizada para posterior utilização nos algoritmos selecionados: K-Means e Agglomerative Clustering. Foi utilizada uma abordagem de otimização de hiperparâmetros para verificação do número de clusters ideais para cada algoritmo e avaliados através do método Silhouette e Elbow, identificou-se que o numero mais adequado para este dataset seria 3 clusters.
 
 ![](Imagens/Clusters_kmeans_silhouette.png) ![](Imagens/Clusters_ward_silhouette.png)
 
-## APLICAÇÃO DOS ALGORITMOS
-### 1. K-Means
+#### 1. K-Means
 Ao aplicar o K-Means, usando os dados padronizados e como parâmetro n_clusters=3, observou-se uma grande concentração de cidades nos clusters 0 e 1 e apenas duas cidades no cluster 2 (Rio de Janeiro-RJ e São Paulo-SP). Para melhor visualização dos dados, foi aplicado o PCA para redução de dimensionalidade.
 
 ![](Imagens/scatter_kmeans.png) 
@@ -78,7 +91,7 @@ Para o componente 2, temos:
 | PC2 - Atributo 3      | MULHERTOT | População residente   feminina      | 0.3397811294723905  |
 | PC2 - Atributo 4      | PEA       | População economicamente ativa      | 0.3389914820057626  |
 
-### 2. Agglomerative Clustering
+#### 2. Agglomerative Clustering
 
 Outra abordagem foi aplicando a metodologia de clustering hierárquico, com o mesmo numero de clusters n=3 e tipo de linkage='Ward'.
 Para melhor visualização dos dados, foi aplicado o PCA para redução de dimensionalidade. O resultado foi bem semelhante ao algoritmo anterior, com grande concentração de cidades nos clusters 0 e 1 e apenas duas cidades no cluster 2 (Rio de Janeiro-RJ e São Paulo-SP).
@@ -106,7 +119,7 @@ A divisão de quantidade de cidades por região e cluster segue detalhada na tab
 ![](Imagens/Clusters_ward_regiao.png) 
 
 
-## RESULTADOS
+### RESULTADOS E COONCLUSÕES
 
 A partir dos modelos aplicados, verificamos a relação com os valores do score de igualdade de gênero "SCO", original do dataset para analisarmos os resultados e, comparando os dois algoritmos, temos que:
 

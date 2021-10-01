@@ -119,7 +119,7 @@ A divisão de quantidade de cidades por região e cluster segue detalhada na tab
 ![](Imagens/Clusters_ward_regiao.png) 
 
 
-### RESULTADOS E COONCLUSÕES
+### RESULTADOS E CONCLUSÕES
 
 A partir dos modelos aplicados, verificamos a relação com os valores do score de igualdade de gênero "SCO", original do dataset para analisarmos os resultados e, comparando os dois algoritmos, temos que:
 

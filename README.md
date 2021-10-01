@@ -127,4 +127,12 @@ A partir dos modelos aplicados, verificamos a relação com os valores do score 
 2) para os clusters semelhantes de scores mais baixos (cluster 1 no KMEANS e cluster 0 no Hierarquico), conseguimos observar uma diferença de 675 cidades entre os dois algoritmos. Mesmo com essa diferença de agrupamento, a mediana dos scores permanece próximo, aproximadamente 0.74. Nesses agrupamentos percebemos uma grande concentração de cidades do sul, sudeste e centro-oeste.
 3) Rio de Janeiro e São Paulo foram destoantes das demais cidades, representadas no cluster 2, com mediana de score de 0.77
 
+---
+
+Matrícula: 182.477.017
+
+Pontifícia Universidade Católica do Rio de Janeiro
+
+Curso de Pós Graduação *Business Intelligence Master*
+
 
